@@ -6,7 +6,7 @@
 
 ## Desafio: interencdec (Criptografia)
 
-*Introdução*  
+**Introdução**
 
 "interencdec" é um desafio da plataforma picoCTF - plataforma na qual oferece exercícios e competições voltados para segurança cibernética. Este desafio envolve assuntos como criptografia e vários processos de decodificação. Nele, veremos a codificação Base64 e a Cifra de César. No entanto, o objetivo do desafio é treinar a capacidade de reconhecer e decodificar dados encobertos em diversas camadas de codificação.
 
@@ -14,7 +14,7 @@
 
 Essa questão consiste em um exercício de codificação/decodificação de uma mensagem encriptada. Ao decodificá-la é possível obter a flag.
 
-*Análise Inicial*
+**Análise Inicial**
 
 Quando começamos a resolver o desafio obtemos a seguinte descrição:
 
@@ -25,11 +25,11 @@ Também possuimos uma dica que a própria questão traz:
 
 >Engaging in various decoding processes is of utmost importance
 
-*Interpretando a Dica*
+**Interpretando a Dica**
 
 A dica recebida foi bem clara e objetiva, ela nos leva para apenas uma abordagem lógica: processos de decodificação.
 
-*Solução da Questão*
+**Solução da Questão**
 
 Ao baixarmos o arquivo que a questão nos pede, abrimos-o no bloco de notas.
 
@@ -65,7 +65,7 @@ Quando ajustamos a aba **Amount** para 45 foi possível obter a flag!
 
 Por fim, concluímos nossa missão! Encontramos a flag ao decorrer de vários processos de decodificação.
 
-*Conclusão*
+**Conclusão**
 
 Flag:
 
