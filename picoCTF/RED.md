@@ -52,7 +52,7 @@ Analisando essa tabela a fundo, remetemos-a à segunda dica da questão: *"Red?G
 
 Assim que colocamos os comandos corretos, o site nos mostra que os LSBs do canal vermelho carregavam diversas strings idênticas em Base64 - um jeito de codificar dados binários em texto.
 
-[![red6.jpg](https://i.postimg.cc/C5vz42D8/red6.jpg)](https://postimg.cc/y3Z11vL6) 
+[![red6.jpg](https://i.postimg.cc/vZMXSq4K/red6.jpg)](https://postimg.cc/1fCp8Kc0)
 
  Logo, copiamos uma das diversas strings idênticas que estão no site, que já é o suficiente para decodificarmos. Optei por utilizar o site [base64decode.org](https://www.base64decode.org/pt/) para realizarmos a decodificação (o próprio CyberChef é capaz de realizar essa conversão, porém estou mais familiarizada com o base64decode):
 
