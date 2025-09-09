@@ -71,15 +71,14 @@ Seguindo tal lógica, abrimos o ***Webshell*** - *terminal do picoCTF*, e digita
 
 Ao pressionarmos *Enter*, o terminal irá nos mostrar a canção a partir do **VERSO 1**, como havíamos comentado.
 
-[![flaghunters10.jpg](https://i.postimg.cc/HkNWPHFB/flaghunters10.jpg)](https://postimg.cc/VJjcJyfC)
-
+[![flaghunters10.jpg](https://i.postimg.cc/GpdNG3PH/flaghunters10.jpg)](https://postimg.cc/gxtNPWTW)
 
 
 Em uma parte do código, na parte do *"Crowd: "* acaba nos pedindo para inserir uma entrada de dados. 
 
 Como havia dito anteriormente, lembram que na parte do código em que há um comando ***RETURN*** e um número, o leitor irá ler qualquer linha específica? Logo, iremos digitar **RETURN 0**  (já que força a função a terminar imediatamente e com sucesso, como no C/C++) para o *script* e ver o que ele nos mostra.
 
-[![flag11.jpg](https://i.postimg.cc/X7wDzghh/flag11.jpg)](https://postimg.cc/Ln8TqjmB)
+[![flag11.jpg](https://i.postimg.cc/90KK7G1h/flag11.jpg)](https://postimg.cc/5Q5scQZ7)
 
 Podemos perceber que a saída nos mostra o **RETURN 0** em diversos trechos, tratando-o como uma *string* - sequência de caracteres. Para fazer o *script* interpretar o **RETURN 0** como um comando, precisamos ajustar nossa entrada de dados.
 
@@ -87,7 +86,7 @@ No código aberto no ***Visual Studio Code***, notamos que o programa separa seu
 
 Voltando para o ***Webshell***, vamos fazer o teste:
  
-[![flag12.jpg](https://i.postimg.cc/8kn1CTzD/flag12.jpg)](https://postimg.cc/BtHWY9Fw)
+[![flag12.jpg](https://i.postimg.cc/B6MGXLdS/flag12.jpg)](https://postimg.cc/LYYWWX9w)
 
 Com isso, o programa volta a imprimir desde a primeira linha, incluindo a *secret_intro*. Por fim, concluímos nossa missão. Encontramos a *flag*!
 
