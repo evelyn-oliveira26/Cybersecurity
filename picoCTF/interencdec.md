@@ -43,11 +43,11 @@ Seguindo tal lógica, vamos procurar decodificar a tal mensagem encriptada. Para
 
 Assim que entramos no site, encontramos no canto esquerdo a aba ***Operations***, nela, iremos pesquisar por *From Base64*, pois a mensagem que copiamos está no formato Base64 - método de codificação binário-texto que converte dados binários em uma sequência de caracteres imprimíveis seguros.
 
-[![inter3.jpg](https://i.postimg.cc/25JbsMX7/inter3.jpg)](https://postimg.cc/t134PSbs)
+[![inter3.jpg](https://i.postimg.cc/wBxzHQGf/inter3.jpg)](https://postimg.cc/0z4F0DxD)
 
 Ao decodificarmos a mensagem encriptada, na aba **Output** recebemos outra mensagem também encriptada. Notem que ela começa com um " b' " e termina com " ' ", esses caracteres não fazem parte da mensagem, é um formato do site mostrar a resposta (padrão do Python), logo, iremos remover essa parte e deixar o que realmente nos interessa, que é o conteúdo dentro das aspas.
  
-[![inter4.jpg](https://i.postimg.cc/76kDJNCy/inter4.jpg)](https://postimg.cc/mc8K0CNd)
+[![inter4.jpg](https://i.postimg.cc/VLyc58hb/inter4.jpg)](https://postimg.cc/5jmrkZbx)
 
 Quando decodificamos a segunda mensagem, o **Output** nos mostra uma outra mensagem encriptada, essa nova mensagem está quaseeee legível, então iremos testar a nova decodificação pela Cifra de César -  método de criptografia que substitui cada letra do texto original por outra letra um número fixo de posições à frente no alfabeto.
 
@@ -55,13 +55,13 @@ Efetivamente, ainda no [CyberChef](https://gchq.github.io/CyberChef/), pesquisar
 
 Ao adicionarmos esse método, colamos a segunda mensagem que acabamos de encontrar no **Input**.
 
-[![inter6.jpg](https://i.postimg.cc/HWvKf2ps/inter6.jpg)](https://postimg.cc/vD93n5gp)
+[![inter6.jpg](https://i.postimg.cc/6ptJLhtW/inter6.jpg)](https://postimg.cc/RNsDvKWy)
 
 Porém ao testar com o número de posições ajustado para 13, encontramos mais uma mensagem encriptada, logo, fui ajustando o número de posições até obtermos a flag.
 
 Quando ajustamos a aba **Amount** para 45 foi possível obter a flag!
 
-[![inter8.jpg](https://i.postimg.cc/vm8kJS6T/inter8.jpg)](https://postimg.cc/qNY1nwwH)
+[![inter8.jpg](https://i.postimg.cc/GmK0Msmk/inter8.jpg)](https://postimg.cc/tssmJJPT)
 
 Por fim, concluímos nossa missão! Encontramos a flag ao decorrer de vários processos de decodificação.
 
