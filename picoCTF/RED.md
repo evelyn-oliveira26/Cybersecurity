@@ -6,7 +6,7 @@
 
 ## Desafio: RED (Esteganografia)
 
-*Introdução*  
+**Introdução**
 
 "RED" é um desafio da plataforma picoCTF - plataforma na qual oferece exercícios e competições voltados para segurança cibernética. Este desafio envolve assuntos como esteganografia - significa a prática de esconder uma informação dentro de outra, de modo que a existência da informação secreta passe despercebida. Este desafio também envolve a modificação dos bits menos significativos e codificação Base64. No entanto, o objetivo do desafio é mostrar como mensagens secretas podem ser escondidas em arquivos de imagem usando esteganografia.
 
@@ -14,7 +14,7 @@
 
 Essa questão consiste em treinar o uso de ferramentas para detectar e extrair dados de uma imagem fornecida, codificado em Base64. Ao decodificá-lo é possível obter a flag.
 
-*Análise Inicial*
+**Análise Inicial**
 
 Quando começamos a resolver o desafio obtemos a seguinte descrição e a seguinte imagem:
 
