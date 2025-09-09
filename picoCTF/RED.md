@@ -44,7 +44,7 @@ Assim que entramos no site, encontramos no canto esquerdo a aba **Operations**, 
 
 [![red4.jpg](https://i.postimg.cc/YqqFm6gg/red4.jpg)](https://postimg.cc/qgSqPC1M)
 
-Em seguida, na aba *Recipe*, obtemos a seguinte tabela:
+Em seguida, na aba **Recipe**, obtemos a seguinte tabela:
 
 [![red5.jpg](https://i.postimg.cc/dVhT5J5V/red5.jpg)](https://postimg.cc/Mn8TTJkC)
 
