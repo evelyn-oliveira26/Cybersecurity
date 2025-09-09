@@ -34,7 +34,7 @@ Também possuimos algumas dicas que a própria questão traz:
 
 Analisando a primeira dica, como só temos uma única imagem conosco, isso nos leva a um único caminho lógico: checar os dados da imagem. Nesse sentido, importamos a imagem no [Notepad++](https://notepad-plus-plus.org/downloads/) - editor de texto e de código-fonte que oferece recursos avançados em comparação com o Bloco de Notas padrão. Assim que importamos, obtemos o seguinte poema:
 
-[![red2.jpg](https://i.postimg.cc/GtjknzD3/red2.jpg)](https://postimg.cc/CnzZjGJ9)
+[![red2.jpg](https://i.postimg.cc/4y9wjjvD/red2.jpg)](https://postimg.cc/q6p83b5w)
 
 O poema particularmente é fofo, mas foquem nas letras maiúsculas do poema. Cada começo de verso possui letras maiúsculas, e se juntarmos elas montamos a seguinte frase: **CHECK LSB**.
 
