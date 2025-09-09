@@ -42,8 +42,13 @@ Isso é uma pista direta de que o programa sofre de injeção de código, e que 
 Ao baixarmos o arquivo que a questão nos pede, notamos que o arquivo é um código em *Python*. Nesse sentido, abrimos o arquivo no ***Visual Studio Code*** para analisarmos-o.
 
 
-# [![flaghunters.jpg](https://i.postimg.cc/DzCk0cP0/flaghunters.jpg)](https://postimg.cc/3yDbbm6Q) [![flaghunters2.jpg](https://i.postimg.cc/D0LMrQLq/flaghunters2.jpg)](https://postimg.cc/y36jBZfd) [![flaghunters3.jpg](https://i.postimg.cc/50ZrQKY4/flaghunters3.jpg)](https://postimg.cc/xJ35WR3h) 
-# [![flaghunters4.jpg](https://i.postimg.cc/fL3FLQbq/flaghunters4.jpg)](https://postimg.cc/S2hVT5Cc)
+[![flaghunters.jpg](https://i.postimg.cc/xCbH86V3/flaghunters.jpg)](https://postimg.cc/9RCzNtMD) 
+
+[![flaghunters2.jpg](https://i.postimg.cc/wvJmzzPQ/flaghunters2.jpg)](https://postimg.cc/PpXxbgdC) 
+ 
+[![flaghunters3.jpg](https://i.postimg.cc/d3YTtXcP/flaghunters3.jpg)](https://postimg.cc/JDphpphP) 
+ 
+[![flaghunters4.jpg](https://i.postimg.cc/jS5n5Pm5/flaghunters4.jpg)](https://postimg.cc/ykM8pgV4)
 
 
 Ao analisarmos com clareza, percebemos que no começo do código está armazenado o conteúdo de nossa *flag*.
