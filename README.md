@@ -1,7 +1,7 @@
 # 🔐 Cybersecurity – Exercícios e Estudos
 
 Bem-vindo(a) ao repositório *Cybersecurity*!  
-Aqui vou documentar meus estudos, resoluções de desafios e entregas de exercícios relacionados à área de Segurança Cibernética, com foco inicial em **picoCTF*.
+Aqui vou documentar meus estudos, resoluções de desafios e entregas de exercícios relacionados à área de Segurança Cibernética, com foco inicial em *picoCTF*.
 
 ---
 
