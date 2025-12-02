@@ -1,15 +1,19 @@
 # CTF - Natas (OverTheWire):
 
 ###### solved by @evelyn-oliveira26
-> this is a Room about ........
+> this is a Room about Web Security / Web Hacking.
 
-## Título Geral
+[![image.png](https://i.postimg.cc/q7xMVM3n/image.png)](https://postimg.cc/nsMtqxTc)
 
-[![Imagem-do-Whats-App-de-2025-11-22-a(s)-03-12-11-32479aac.jpg](https://i.postimg.cc/VkP7nf2S/Imagem-do-Whats-App-de-2025-11-22-a(s)-03-12-11-32479aac.jpg)](https://postimg.cc/SJV7phSq)
+Link: [Natas - OverTheWire](https://overthewire.org/wargames/natas/) 
 
 ### **Introdução**
 
-.............................
+A trilha *Natas*, do *OverTheWire*, é uma sequência de desafios focados em segurança web, projetados para ensinar, na prática, os fundamentos por trás de ataques e defesas em aplicações online. Nesta caminhada, que vai do level 0 ao level 15, cada etapa apresenta um conceito novo — desde inspeção básica de HTML até injeção SQL real, passando por manipulação de requisições HTTP, autenticação, filtros, encoding e exploração de comportamentos inesperados no servidor.
+
+O progresso é construído de forma gradual: primeiro aprendemos a observar; depois, a entender; e finalmente, a explorar com precisão. Cada *level* esconde uma senha que só pode ser obtida analisando a página, quebrando proteções ou aproveitando vulnerabilidades específicas.
+
+Esta trilha documenta minha jornada completa pelos *levels* 0 a 15, explicando cada solução, ferramentas usadas, erros cometidos e o aprendizado tirado de cada desafio. O objetivo é compartilhar conhecimento e mostrar que segurança web se aprende praticando.
 
 ---
 ## Natas Level 0
@@ -24,6 +28,7 @@ Seguindo a lógica da dica fornecida, iremos inspecionar a página nas *DevTools
 
 
 [![image.png](https://i.postimg.cc/xCXVkjbG/image.png)](https://postimg.cc/mzW5Jsjh)
+
 
 ### Perguntas a serem feitas:
 
@@ -735,13 +740,34 @@ Ao testar com a letra 'a', obtemos a seguinte resposta:
 
 [![image.png](https://i.postimg.cc/NF1pjmGD/image.png)](https://postimg.cc/m1gQdcH1)
 
-Poderíamos ficar aqui por horas testando caracteres até acharmos a senha correta, porém o tempo que ficaríamos aqui não seria nada eficiente. As senhas do *Natas*, por padrão, são enormes, então acredito que essa não seja a melhor saída para essa questão.
+Poderíamos tentar testar manualmente cada caractere, mas isso não seria eficiente nem confiável. O comando **" OR substring(username,1,1)='a' --**, não verifica a senha, apenas checa se algum usuário no banco começa com aquela letra.
 
-Logo, acabei pedindo para a IA criar um código para mim em **Python**, a fim de automatizar o processo.
+Por isso, a melhor solução é automatizar o processo. No entanto, criar um script que realize os testes de forma estruturada e filtre corretamente o usuário alvo é a melhor alternativa. Com isso, pedi para a IA gerar um código em **Python** que executasse o ataque automaticamente.
+
 Aqui está o código:
 
+[![image.png](https://i.postimg.cc/ZY6hVkn5/image.png)](https://postimg.cc/bdYMwB17)
 
+Ele foi testado no **Google Colab**. E ao executarmos, obtemos:
 
+[![image.png](https://i.postimg.cc/cLbjdTCP/image.png)](https://postimg.cc/tsFD53hz)
+
+[![image.png](https://i.postimg.cc/13fC76BT/image.png)](https://postimg.cc/SnbfJnw7)
+
+Obtemos o resultado final da  nossa senha para o *Natas 16*!!
+
+> natas16: hpkjkyvilqctew33qmuxl6edvfmw4sgo
+
+### **Perguntas a serem feitas:**
+
+* **Que tipo de ataque o Natas 15 ilustra?**
+
+   **Resposta:**  Ilustra **Blind Boolean SQL Injection**, onde se testa condições lógicas que retornam um resultado.
+  
 ---
 
 ### **Conclusão:**
+
+Finalizar os levels 0 a 15 do *Natas* representa mais do que apenas resolver desafios — é entender a mentalidade de quem desenvolve, testa e explora aplicações web. Ao longo dessa trilha, conceitos essenciais de segurança são aprendidos: como o servidor interpreta input do usuário, como cookies e autenticação funcionam, como filtros falham e como vulnerabilidades simples podem abrir portas enormes.
+
+Com isso, concluo minha caminhada pelos primeiros 15 níveis do *Natas*. O aprendizado aqui acumulado serve como base sólida para avançar aos próximos levels, onde a exploração se torna ainda mais técnica e desafiadora. Obrigada a todos que puderam acompanhar essa jornada!
