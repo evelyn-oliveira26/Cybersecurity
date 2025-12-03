@@ -9,11 +9,11 @@ Link: [Natas - OverTheWire](https://overthewire.org/wargames/natas/)
 
 ### **Introdução**
 
-A trilha *Natas*, do *OverTheWire*, é uma sequência de desafios focados em segurança web, projetados para ensinar, na prática, os fundamentos por trás de ataques e defesas em aplicações online. Nesta caminhada, que vai do level 0 ao level 15, cada etapa apresenta um conceito novo — desde inspeção básica de HTML até injeção SQL real, passando por manipulação de requisições HTTP, autenticação, filtros, encoding e exploração de comportamentos inesperados no servidor.
+A trilha *Natas*, do *OverTheWire*, é uma sequência de desafios focados em segurança web, projetados para ensinar, na prática, os fundamentos por trás de ataques e defesas em aplicações online. Nesta caminhada, que vai do level 0 ao level 15, cada etapa apresenta um conceito novo - desde inspeção básica de HTML até injeção SQL real, passando por manipulação de requisições HTTP, autenticação, filtros, encoding e exploração de comportamentos inesperados no servidor.
 
-O progresso é construído de forma gradual: primeiro aprendemos a observar; depois, a entender; e finalmente, a explorar com precisão. Cada *level* esconde uma senha que só pode ser obtida analisando a página, quebrando proteções ou aproveitando vulnerabilidades específicas.
+O progresso é construído de forma gradual: primeiro aprendemos a observar; depois, a entender; e finalmente, a explorar com precisão. Cada level esconde uma senha que só pode ser obtida analisando a página, quebrando proteções ou aproveitando vulnerabilidades específicas.
 
-Esta trilha documenta minha jornada completa pelos *levels* 0 a 15, explicando cada solução, ferramentas usadas, erros cometidos e o aprendizado tirado de cada desafio. O objetivo é compartilhar conhecimento e mostrar que segurança web se aprende praticando.
+Esta trilha documenta minha jornada completa pelos levels 0 a 15, explicando cada solução, ferramentas usadas, erros cometidos e o aprendizado tirado de cada desafio. O objetivo é compartilhar conhecimento e mostrar que segurança web se aprende praticando.
 
 ---
 ## Natas Level 0
@@ -48,7 +48,7 @@ O segundo desafio não se diferencia muito do primeiro. Agora ao entrarmos na p�
 
 No desafio anterior, poderíamos ter resolvido o desafio clicando com o **botão direito** do *mouse*, e inspecionar a página. No entanto, nesse exercício o site bloqueou o clique direito para não irmos por esse atalho. 
 
-**Resolução:** Os atalhos existentes no computador não foram bloqueados, e um deles é o **Ctrl + U**, que ao pressionarmos essas teclas, elas irão nos levar direto para o código-fonte do site. Logo, quando analisamos o código-fonte do site, mais uma vez a senha para o próximo nível está lá:
+No entanto, os atalhos existentes no computador não foram bloqueados, e um deles é o **Ctrl + U**, que ao pressionarmos essas teclas, elas irão nos levar direto para o código-fonte do site. Logo, quando analisamos o código-fonte do site, mais uma vez a senha para o próximo nível está lá:
 
 > The password for natas2 is TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
 
@@ -69,7 +69,7 @@ A princípio, iremos inspecionar o código-fonte da página. Ao apertarmos **Ctr
 
 [![image.png](https://i.postimg.cc/5yynbgvg/image.png)](https://postimg.cc/9w3GBGLw)
 
-Logo quando abrimos-o, nos deparamos com uma imagem preta, que também ao inspecionarmos, não nos leva a nada, porém quando abrimos a imagem que nos leva a uma tela preta, o nosso link de site acaba mudando para este:
+Logo, quando abrimos-o, nos deparamos com uma imagem preta, que também ao inspecionarmos, não nos leva a nada, porém quando abrimos a imagem que nos leva a uma tela preta, o nosso link de site acaba mudando para este:
 
 [![image.png](https://i.postimg.cc/Rh28Yy89/image.png)](https://postimg.cc/FkgDdWNn)
 
@@ -77,7 +77,7 @@ Analisando este link, logo após o **".org"**, possuímos o seguinte caminho de 
 
 [![image.png](https://i.postimg.cc/ZRsKWYBZ/image.png)](https://postimg.cc/Hc5CKg9P)
 
-Dito e feito! Encontramos as vulnerabilidades desse site. E ao acessarmos o arquivo **users.txt**, a senha para a próxima fase do *Natas* está exposta junto ao arquivo.
+Dito e feito! Encontramos as vulnerabilidades desse site. E ao acessarmos o arquivo **"users.txt"**, a senha para a próxima fase do *Natas* está exposta junto ao arquivo.
 
 > natas3: 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
 
@@ -120,13 +120,15 @@ No nível 4 do *Natas*, obtemos a seguinte frase:
 
 > Access disallowed. You are visiting from "http://natas4.natas.labs.overthewire.org/index.php" while authorized users should come only from "http://natas5.natas.labs.overthewire.org/".
 
-Quando inspecionamos o código-fonte da página, não conseguimos achar nada muito interessante. Por isso, iremos usar uma ferramenta poderosíssima em segurança cibernética, o **Burp Suite** - um software desenvolvido em Java  para a realização de testes de segurança em aplicações web. Ele está insataldo juntamente a **Kali Linux** - uma distribuição Linux de código aberto, ela permite aos usuários realizar testes de penetração avançados e auditorias de segurança.
+Quando inspecionamos o código-fonte da página, não conseguimos achar nada muito interessante. Por isso, iremos usar uma ferramenta poderosíssima em segurança cibernética, o **Burp Suite** - um software desenvolvido em **Java** para a realização de testes de segurança em aplicações web. Ele está instalado juntamente a **Kali Linux** - uma distribuição Linux de código aberto, ela permite aos usuários realizar testes de penetração avançados e auditorias de segurança.
 
 Logo, iremos acessar o **Burp Suite** na máquina da virtual e procuraremos por informações importantes (gostaria de dizer que não consegui obter imagens/prints dentro da **Kali**, meu computador apenas tira capturas de tela de sua  interface própria, tentei tirar fotos pelo celular, porém as fotos estão pixeladas, quando você tira foto de uma tela mesmo, sabe? Mas irei descrever o passo a passo da questão).
 
-Ao acessarmos o **Burp Suite**, iremos ir na aba **Proxy** → **Intercept** → **Intercept is on**. Isso começará a interceptação do tráfego de rede. Logo, iremos acessar a URL do *Natas4* no navegador dentro da **Kali**, e assim, os dados daquele site serão capturados. No entanto, podemos editar esses dados para explorar cada vez mais as vulnerabilidades: ao clicarmos com o **botão direito do mouse** na URL que o **Burp Suite** capturou, e clicar em **Send to Repeater**, esses dados capturados irão para a aba **Repeater** - aba onde podemos editar esses dados.
+Ao acessarmos o **Burp Suite**, iremos ir na aba **Proxy** → **Intercept** → **Intercept is on**. Isso começará a interceptação do tráfego de rede. Logo, iremos acessar a URL do *Natas 4* no navegador dentro da **Kali**, e assim, os dados daquele site serão capturados.
 
-Se formos analisar os dados, podemos perceber que há um com o cabeçalho **Host:** e outro com o cabeçalho **Referer:**, o **Host** armazena a URL original do Natas4 e o **Referer** também, porém com os caminhos  *index.php* adicionados a URL, que indica o endereço da página web anterior de onde o link para a página atual foi clicado. Esses dois cabeçalhos possuem certa ligação, como expliquei acima. Seguindo tal lógica, não poderíamos modificar o **Host** já que ele é o domínio original do site, mas podemos alterar o **Referer** para burlar o controle de acesso.
+No entanto, podemos editar esses dados para explorar cada vez mais as vulnerabilidades: ao clicarmos com o **botão direito do mouse** na URL que o **Burp Suite** capturou, e clicar em **Send to Repeater**, esses dados capturados irão para a aba **Repeater** - aba onde podemos editar esses dados.
+
+Se formos analisar os dados, podemos perceber que há um dado com o cabeçalho **Host:** e outro com o cabeçalho **Referer:**, o **Host** armazena a URL original do *Natas 4* e o **Referer** também, porém com os caminhos  *index.php* adicionados a URL, que indica o endereço da página web anterior de onde o link para a página atual foi clicado. Esses dois cabeçalhos possuem certa ligação, como expliquei acima. Seguindo tal lógica, não poderíamos modificar o **Host** já que ele é o domínio original do site, mas podemos alterar o **Referer** para burlar o controle de acesso.
 
 Quando alteramos o **Referer** para "http://natas5.natas.labs.overthewire.org/" que é justamente a URL que a própria questão nos fornece no início dela, e clicamos em  **Send**,  iremos obter acesso a resposta:
 
@@ -136,7 +138,7 @@ Quando alteramos o **Referer** para "http://natas5.natas.labs.overthewire.org/" 
 
 * **Qual é o propósito do Burp Suite em testes de segurança e por que ele é útil neste desafio?**
 
-    **Resposta:** O **Burp Suite** serve para interceptar e alterar requisições enviadas ao servidor, permitindo analisar como a aplicação trata cada cabeçalho. No *Natas Level 4*, ele é útil porque nos deixa modificar o **Referer**, testando se o site realmente depende desse valor para liberar o acesso - o que confirma a vulnerabilidade.
+    **Resposta:** O **Burp Suite** serve para interceptar e alterar requisições enviadas ao servidor, permitindo analisar como a aplicação trata cada cabeçalho. No *Natas 4*, ele é útil porque nos deixa modificar o **Referer**, testando se o site realmente depende desse valor para liberar o acesso - o que confirma a vulnerabilidade.
 
 ---
 ## Natas Level 5
@@ -162,9 +164,9 @@ Possuímos três *Cookies* do próprio site - *Cookies* são pequenos arquivos d
 
  ### **Perguntas a serem feitas:**
 
-* **Por que analisar cookies é um passo importante no estudo de segurança web?**
+* **Por que analisar *cookies* é um passo importante no estudo de segurança web?**
 
-    **Resposta:** Porque cookies podem armazenar informações de autenticação e, se forem mal configurados, permitem que alguém altere o estado de login ou acesso apenas mudando seus valores.
+    **Resposta:** Porque *cookies* podem armazenar informações de autenticação e, se forem mal configurados, permitem que alguém altere o estado de login ou acesso apenas mudando seus valores.
 
 ---
 ## Natas Level 6
@@ -219,7 +221,7 @@ Inicialmente, iremos inspecionar a página. Ao executar as **Dev Tools**, encont
 
 >  hint: password for webuser natas8 is in /etc/natas_webpass/natas8
 
-Bom, ao que tudo indica parece ser um caminho para adicionarmos na URL, porém ao adicionarmos este caminho a nossa URL, caímos direto no **erro 404** (quando a página está fora do ar, ou não encontrada), logo, voltamos à estaca zero.
+Bom, ao que tudo indica parece ser um caminho para adicionarmos na URL, porém ao adicionarmos este caminho a nossa URL, caímos direto no **Erro 404** (quando a página está fora do ar, ou não encontrada), logo, voltamos à estaca zero.
 
 De acordo com algumas pesquisas, pude perceber que **/etc/** não é um caminho válido em URLs, porque **/etc** é um diretório interno do **Linux**, não do site, e nenhum servidor web expõe diretórios do sistema pela URL. Logo, descartamos a possibilidade dessa dica ser um **caminho**.
 
@@ -293,7 +295,7 @@ Certo, agora passamos para o comando **strrev**, que seria o **String Reverse**:
 
 > b3ViV1lmMmtCcQ==
 
-Ao reverter essa string, agora só falta a codificação **Base64**. Ao decodificá-la, obtemos:.
+Ao reverter essa string, agora só falta a decodificação **Base64**. Ao decodificá-la, obtemos:.
 
 > oubWYf2kBq
 
@@ -346,24 +348,24 @@ Aí que entra o grande perigo: o código utiliza a função **passthru()** para 
 
 Aí junta esses dois comandos + algo digitado pelo usuário, e como não há validação nenhuma, é possível **injetar comandos adicionais** diretamente na entrada de dados da página inicial.
 
-Andei pesquisando, e existem muitos comandos possíveis para testar em injeções com **grep**, mas nem todos funcionam, porém um padrão muito conhecido é o uso do **ponto e vírgula (;)**.
+Andei pesquisando, e existem muitos comandos possíveis para testar em injeções com **grep**, mas nem todos funcionam dependendo da aplicação, porém um padrão muito conhecido é o uso do **ponto e vírgula (;)**.
  O **ponto e vírgula** no terminal **Linux** é um operador de controle que permite executar vários comandos em sequência na mesma linha.
 
 Ou seja, vamos analisar essa parte novamente do código em **PHP**:
 
  > grep -i $key dictionary.txt
 
-Se onde está **$key** for qualquer coisa que o usuário digitar, e o usuário injetar um comando para assumir o valor de **$key**, ele poderá obter informações muito importantes. Há um comando conhecido, que se chama **ls -al** - ele lista todos os arquivos do diretório atual com detalhes, e isso é muito importante para explorarmos as vulnerabilidades do site.
+Se onde está **$key** for qualquer coisa que o usuário digitar, e o usuário injetar um comando para assumir o valor de **$key**, ele poderá obter informações muito importantes. Há um comando conhecido, que se chama "**ls -al**" - ele lista todos os arquivos do diretório atual com detalhes, e isso é muito importante para explorarmos as vulnerabilidades do site.
 
-Se eu entrar com esses comandos juntos: **"; ls -al"**, obtemos isso:
+Se eu entrar com esses comandos juntos: "**; ls -al**", obtemos isso:
 
 [![image.png](https://i.postimg.cc/SKnzznnH/image.png)](https://postimg.cc/PLkqgrzM)
 
-Certo, mas ainda não é isso que estamos procurando, existe outra injeção de comando que é **../../../**, esses dois pontos e uma barra é uma técnica que permite que um atacante se mova pelos diretórios do sistema de arquivos de um servidor, acessando arquivos e diretórios que não deveriam estar disponíveis. Ao aplicar juntamente com o **"; ls"**, obtemos:
+Certo, mas ainda não é isso que estamos procurando, existe outra injeção de comando que é "**../../../**", esses dois pontos e uma barra é uma técnica que permite que um atacante se mova pelos diretórios do sistema de arquivos de um servidor, acessando arquivos e diretórios que não deveriam estar disponíveis. Ao aplicar juntamente com o **"; ls"**, obtemos:
 
 [![image.png](https://i.postimg.cc/XvWYnXwd/image.png)](https://postimg.cc/Xr2b8j1Y)
 
-O **ls** sozinho é um comando usado para listar arquivos e diretórios em um diretório. Então se eu combinar o **";"** com o **"ls"** e com o **"../../../"** , eu executo todo esse comando na mesma linha.
+O "**ls**" sozinho é um comando usado para listar arquivos e diretórios em um diretório. Então se eu combinar o "**;**" com o "**ls**" e com o "**../../../**" , eu executo todo esse comando na mesma linha.
 
 Se lembram do nível 7 do *Natas*, em que conseguimos analisar as informações para a senha, a partir do diretório **"etc"**, bom, aqui ele aparece novamente, então vamos utilizar esse diretório juntamente com as informações necessárias para acessarmos a senha do *Natas 10*, porém ao invés de só listar arquivos, iremos rodar um comando para ler o conteúdo do arquivo. O comando é o:
 
@@ -416,21 +418,21 @@ E se tivéssemos colocado algum número para teste e tivessem encontrado uma cor
     **Resposta:** Bloquear caracteres não impede que informações sensíveis sejam expostas se a lógica principal do sistema permitir acessos indevidos.
 ---
 ## Natas Level 11
-Chegamos ao **Natas Nível 11*! Nele contém a seguinte página inicial:
+Chegamos ao *Natas Nível 11*! Nele contém a seguinte página inicial:
 
 [![image.png](https://i.postimg.cc/L808GfR6/image.png)](https://postimg.cc/k2KCb2Bk)
 
-Como a própria frase menciona sobre os **Cookies**, vamos inspecioná-los:
+Como a própria frase menciona sobre os *Cookies*, vamos inspecioná-los:
 
 [![image.png](https://i.postimg.cc/tg4n0y88/image.png)](https://postimg.cc/75jZ0vHN)
 
-Bom, obtemos **3 cookies** diferentes, mas o que realmente vai importar é aquele em que contém o nome: **data** e o domínio: **natas11...**
+Bom, obtemos **3 *cookies*** diferentes, mas o que realmente vai importar é aquele em que contém o nome: **data** e o domínio: **natas11...**
 
-Quando conferimos o valor desse cookie, ele está assim:
+Quando conferimos o valor desse *cookie*, ele está assim:
 
 > HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAyIxTRg%3D
 
-Se clicarmos em **Show URL-decoded**, na parte inferior, o valor do **cookie** altera para:
+Se clicarmos em **Show URL-decoded**, na parte inferior, o valor do *cookie* altera para:
 
 > HmYkBwozJw4WNyAAFyB1VUcqOE1JZjUIBis7ABdmbU1GIjEJAyIxTRg=
 
@@ -438,7 +440,7 @@ O que realmente altera é o **"%3D"** para **"="**. A princípio, vou conferir o
 
 [![image.png](https://i.postimg.cc/W4y6pXLS/image.png)](https://postimg.cc/3ygDnjwD)
 
-Ao lermos essa linha, percebemos que se retrata aos **cookies** que estávamos olhando:
+Ao lermos essa linha, percebemos que se retrata aos *cookies* que estávamos olhando:
 
 >     $tempdata = json_decode(xor_encrypt(base64_decode($_COOKIE["data"])), true);
 
@@ -486,11 +488,11 @@ que é o comando que vimos no final do código.
 
 [![image.png](https://i.postimg.cc/XJn1FsDn/image.png)](https://postimg.cc/1gYK1rQd)
 
-Se clicarmos em **Bake**, obteremos o real valor do **cookie** que precisamos para garantir acesso ao *Natas 12*.
+Se clicarmos em **Bake**, obteremos o real valor do *cookie* que precisamos para garantir acesso ao *Natas 12*.
 
 [![image.png](https://i.postimg.cc/13cp6yxV/image.png)](https://postimg.cc/hXvzRWtK)
 
-Logo, é só trocar o valor original do **cookie** para o valor que acabamos de encontrar em **Base64**.
+Logo, é só trocar o valor original do *cookie* para o valor que acabamos de encontrar em **Base64**.
 
 [![image.png](https://i.postimg.cc/gJK5BCLQ/image.png)](https://postimg.cc/S2JDntrf)
 
@@ -537,7 +539,7 @@ Bom, podemos carregar diferentes imagens e o código nos mostrará diversas fras
  Para realizarmos esse tipo de ataque, precisamos ter essas 3 condições:
 
 * O site deve permitir upload;
-* O diretório de upload deve ser conhecido, porque mesmo que enviamos um arquivo malicioso para o servidor, precisamos encontrá-lo e acessá-lo;
+* O diretório de upload deve ser conhecido, porque por mais que enviamos um arquivo malicioso para o servidor, precisamos encontrá-lo e acessá-lo;
 * O servidor deve processar o arquivo malicioso como PHP. 
 
 Bom, então o próximo passo será escrever o arquivo **PHP** para carregar no site.
@@ -550,7 +552,7 @@ A função **file_get_contents()** é usada para ler todo o conteúdo de um arqu
 
 >     <?php echo file_get_contents('/etc/natas_webpass/natas13'); ?>
 
-Essa será o nosso comando malicioso para injetarmos no site, porém não é simplesmente só enviar esse arquivo, pois ao enviarmos, mesmo com a extensão **PHP**, o site interpretou como **JPG**.
+Esse será o nosso comando malicioso para injetarmos no site, porém não é simplesmente só enviar esse arquivo, pois ao enviarmos, mesmo com a extensão **PHP**, o site interpretou como **JPG**.
 
 [![image.png](https://i.postimg.cc/Rh84XqDY/image.png)](https://postimg.cc/WqMB4pjm)
 
@@ -596,7 +598,7 @@ Nessa parte, em específico:
 
 [![image.png](https://i.postimg.cc/SNk08BNH/image.png)](https://postimg.cc/BtYwfwFC)
 
-Esse nível utiliza praticamente da mesma dinâmica do *Natas 12*, precisamos novamente tentar alterar o código-fonte da página, para injetarmos comandos e conseguir a senha.
+Esse nível utiliza praticamente da mesma dinâmica do *Natas 12*. Precisamos novamente tentar alterar o código-fonte da página, para injetarmos comandos e conseguir a senha.
 
 O comando que iremos injetar será o mesmo, porém agora para o *Natas 14*, e faremos tudo isso no **Burp Suite**:
 
@@ -617,7 +619,9 @@ Content-Type: image/jpeg
 
 > ÿØÿà...
 
-Notem esse **"ÿØÿà"**, ao pesquisarmos sobre ele, descobrimos que **"ÿØÿà"** são bytes mágicos do arquivo **JPEG** que contém informações essenciais do cabeçalho da imagem. Não consegui copiar o que vem após o **"ÿØÿà"**, mas é o cabeçalho para confirmar que aquilo é um arquivo em **JPEG**.
+Notem esse **"ÿØÿà"**, ao pesquisarmos sobre ele, descobrimos que **"ÿØÿà"** são bytes mágicos do arquivo **JPEG**. **Bytes mágicos** são uma sequência de bytes no início de um arquivo que serve como uma assinatura para identificar o seu formato de maneira única.
+
+Não consegui copiar o que vem após o **"ÿØÿà"**, mas é o cabeçalho para confirmar que aquilo é um arquivo em **JPEG**.
 
 Como o *Natas 13* valida apenas o início do arquivo - verificando os **bytes mágicos** de **JPEG** - podemos usufruir dessa característica: mantemos os **bytes mágicos** e no lugar do cabeçãho **JPEG**, injetamos o comando em **PHP**.
 
@@ -740,7 +744,7 @@ Ao testar com a letra 'a', obtemos a seguinte resposta:
 
 [![image.png](https://i.postimg.cc/NF1pjmGD/image.png)](https://postimg.cc/m1gQdcH1)
 
-Poderíamos tentar testar manualmente cada caractere, mas isso não seria eficiente nem confiável. O comando **" OR substring(username,1,1)='a' --**, não verifica a senha, apenas checa se algum usuário no banco começa com aquela letra.
+Poderíamos tentar testar manualmente cada caractere, mas isso não seria eficiente. O comando **" OR substring(username,1,1)='a' --**, não verifica a senha, apenas checa se algum usuário no banco começa com aquela letra.
 
 Por isso, a melhor solução é automatizar o processo. No entanto, criar um script que realize os testes de forma estruturada e filtre corretamente o usuário alvo é a melhor alternativa. Com isso, pedi para a IA gerar um código em **Python** que executasse o ataque automaticamente.
 
