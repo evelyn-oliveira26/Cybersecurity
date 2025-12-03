@@ -22,7 +22,7 @@ Esta trilha documenta minha jornada completa pelos levels 0 a 15, explicando cad
 
 > You can find the password for the next level on this page.
 
-Seguindo a lógica da dica fornecida, iremos inspecionar a página nas *DevTools* → *F12* no teclado, e ao inspecionar um pouco já encontramos a nossa senha para a próxima fase:
+Seguindo a lógica da dica fornecida, iremos inspecionar a página nas *DevTools* → *F12* no teclado, e ao inspecionar um pouco, já encontramos a nossa senha para a próxima fase:
 
 > The password for natas1 is 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
 
