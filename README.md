@@ -1,37 +1,38 @@
-# 🔐 Cybersecurity – Exercícios e Estudos
+## 🔐 Cybersecurity – Estudos, Desafios e Write-ups
 
-Bem-vindo(a) ao repositório *Cybersecurity*!  
-Aqui vou documentar meus estudos, resoluções de desafios e entregas de exercícios relacionados à área de Segurança Cibernética, com foco inicial em *picoCTF*.
-
----
+Bem-vindo(a) ao repositório Cybersecurity!
+Aqui registro meus estudos, anotações e write-ups relacionados à área de Segurança Cibernética, cobrindo desde conceitos fundamentais até a prática em desafios e simulações de ataques.
 
 ## 🎯 Objetivos
 
-- Desenvolver habilidades em *CTF (Capture The Flag)*;
-- Aprender sobre conceitos fundamentais de segurança em sistemas e aplicações web;
-- Criar uma base de conhecimento organizada para consultas futuras;
-- Registrar write-ups claros para que até pessoas iniciantes consigam acompanhar.
+* Desenvolver habilidades práticas em CTFs (Capture The Flag) e laboratórios de segurança;
 
----
+* Estudar vulnerabilidades reais e técnicas de exploração;
 
-## 🏴 picoCTF
+* Aprender sobre segurança de aplicações web, sistemas, redes e criptografia;
 
-O *picoCTF* é uma plataforma de desafios e competições voltados para segurança cibernética.  
-Aqui vou postar write-ups detalhados dos desafios que resolvi, com explicações passo a passo.  
+* Criar uma base de conhecimento organizada para revisões futuras;
 
----
+* Produzir write-ups claros, explicativos e acessíveis para iniciantes.
 
-## ✅ Status
+## 📚 Conteúdo do Repositório
 
-Atualmente estou resolvendo desafios do picoCTF e registrando os write-ups na pasta [picoCTF/](./picoCTF/).  
-Cada write-up segue o formato:
-- *Introdução*
-- *Análise Inicial*
-- *Interpretação da Dica*
-- *Passo a passo da solução*
-- *Conclusão*
+Este repositório inclui:
 
-## Autor(a)
+* Write-ups de desafios e CTFs;
+
+* Análises de vulnerabilidades;
+
+* Exercícios e anotações de estudo;
+
+* Scripts auxiliares;
+
+* Referências e materiais complementares;
+
+* Experimentos e testes relacionados à área de segurança.
+  
+Tudo é organizado em pastas conforme o tipo do conteúdo ou tópico.
+
+#### 👤 Autor(a)
 
 Repositório mantido por Evelyn, estudante de Engenharia de Software no Instituto Nacional de Telecomunicações.
-  
