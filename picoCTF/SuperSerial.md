@@ -44,7 +44,7 @@ Isso instrui o sistema a retroceder um diretório e procurar por um arquivo cham
 
 **Solução da Questão**
 
-Ao acessarmos o site, nos deparamos com um pedido de cadastro, típico de questão de CTF. 
+Ao acessarmos o site, nos deparamos com um pedido de cadastro: 
 
 [![image.png](https://i.postimg.cc/nVS9MbKH/image.png)](https://postimg.cc/s1Sg0L08)
 
@@ -120,8 +120,6 @@ No caso, como não tem jeito de enviar código **PHP** como valor de cookie, pre
 **Log** é um arquivo usado pelo sistema para registrar eventos e atividades. A classe **access_log** deveria manipular apenas esses registros,
 porém como o caminho do arquivo não foi validado em **function read_log()**, é possível explorar a função
 para ler arquivos sensíveis, como o arquivo da *flag*.
-
- serializando o código, assim, para que eu pudesse colocar o texto obtido como valor no cookie
 
 A partir desse código, e retornando a **/authentication.php**, utilizei a inteligência artificial para gerar um script explorando essa falha de segurança. O objetivo foi serializar o código, permitindo usar o texto resultante como valor do cookie. Em seguida, executei o código no **PHP Sandbox**:
 
