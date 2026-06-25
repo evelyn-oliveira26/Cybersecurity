@@ -623,7 +623,7 @@ Notem esse **"ÿØÿà"**, ao pesquisarmos sobre ele, descobrimos que **"ÿØÿ�
 
 Não consegui copiar o que vem após o **"ÿØÿà"**, mas é o cabeçalho para confirmar que aquilo é um arquivo em **JPEG**.
 
-Como o *Natas 13* valida apenas o início do arquivo - verificando os **bytes mágicos** de **JPEG** - podemos usufruir dessa característica: mantemos os **bytes mágicos** e no lugar do cabeçãho **JPEG**, injetamos o comando em **PHP**.
+Como o *Natas 13* valida apenas o início do arquivo - verificando os **bytes mágicos** de **JPEG** - podemos usufruir dessa característica: mantemos os **bytes mágicos** e no lugar do cabeçalho **JPEG**, injetamos o comando em **PHP**.
 
 Também não podemos esquecer de mudar:
 
